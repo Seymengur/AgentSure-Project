@@ -1,25 +1,4 @@
-# 🛡️ AgentSure — Autonomous System Warranty & Algorithmic Liability Layer
-
-> **"Code breaks, models hallucinate, agents run rogue. We cover the bill in real-time."**
-
-AgentSure is the first **telemetry-driven parametric InsurTech platform** tailored specifically for autonomous AI agents, LLM tool-calling systems, and AI engineers.
-
-Unlike traditional commercial insurance that takes weeks to underwrite and excludes algorithmic malfunction, AgentSure integrates via a single-line SDK, monitors operational telemetry, triggers automated circuit-breakers, and settles claims programmatically within 60 seconds without paperwork.
-
----
-
-## 📑 Table of Contents
-1. [Executive Summary & Origin](#executive-summary--origin)
-2. [Problem Space & Target Niche](#problem-space--target-niche)
-3. [Core Differentiation (The X-Factor)](#core-differentiation-the-x-factor)
-4. [MVP Architecture & Core Features](#mvp-architecture--core-features)
-5. [System Architecture Diagram](#system-architecture-diagram)
-6. [SDK Quickstart](#sdk-quickstart)
-7. [UI/UX Philosophy ("Ambient Safety")](#uiux-philosophy-ambient-safety)
-8. [Business & Revenue Model](#business--revenue-model)
-9. [Lean Execution & Regulatory Roadmap](#lean-execution--regulatory-roadmap)
-
----
+# 🛡️ AgentSure
 
 ## 🚀 Hızlı Başlangıç (Sunucusuz & Doğrudan Tarayıcıda)
 
