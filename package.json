@@ -1,0 +1,19 @@
+{
+  "name": "agentsure-insurtech",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Autonomous System Warranty & Algorithmic Liability Layer for AI Agents",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "insurtech",
+    "ai-agents",
+    "circuit-breaker",
+    "parametric-insurance",
+    "telemetry"
+  ],
+  "author": "Antigravity Architecture Studio",
+  "license": "MIT"
+}

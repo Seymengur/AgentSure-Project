@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgentSure — Otonom Sistem Teminatı & Risk Katmanı</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <!-- Üst Menü / Navigasyon -->
+  <header>
+    <div class="logo-group">
+      <div class="logo-icon">🛡️</div>
+      <div class="logo-text">AgentSure</div>
+      <span class="logo-pill">InsurTech Çekirdeği • Sunucusuz</span>
+    </div>
+
+    <div class="nav-actions">
+      <div class="pulse-pill">
+        <div id="global-pulse-dot" class="pulse-dot"></div>
+        <span id="global-pulse-text">Tüm 3 Ajan Korumada</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Ana Durum / Karşılama Alanı -->
+    <section class="hero-banner">
+      <div class="hero-info">
+        <h1>Otonom Sistem Teminatı & Risk Katmanı</h1>
+        <p>Yapay zeka ajanları ve LLM araç zincirleri için telemetri güdümlü parametrik sigorta katmanı. Bir ajan sonsuz döngüye girip fatura patlaması yaşarsa veya algoritmik sorumluluk ihlali yaparsa; devre kesicimiz sistemi dondurur ve oluşan zararı 60 saniyenin altında otomatik tazmin eder.</p>
+      </div>
+
+      <div class="hero-metrics">
+        <div class="hero-metric-item">
+          <span class="hero-metric-label">Toplam Sigorta Kapasitesi</span>
+          <span id="stat-insured-cap" class="hero-metric-val emerald">$150,000</span>
+        </div>
+        <div class="hero-metric-item">
+          <span class="hero-metric-label">Ödenen Anında Tazminat</span>
+          <span id="stat-claims-paid" class="hero-metric-val">$4,820.00</span>
+        </div>
+        <div class="hero-metric-item">
+          <span class="hero-metric-label">Korumalı Aktif Ajanlar</span>
+          <span id="stat-active-agents" class="hero-metric-val">3 / 3</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kontrol ve Simülasyon Çubuğu -->
+    <section class="control-strip">
+      <div class="actions-group">
+        <button id="btn-safe-task" class="btn btn-success">
+          🟢 Normal Güvenli Görevi Yürüt
+        </button>
+        <button id="btn-simulate-rogue" class="btn btn-danger">
+          ⚡ Fatura Patlaması (Runaway) Simüle Et
+        </button>
+        <button id="btn-reset-all" class="btn btn-secondary">
+          🔄 Tümünü Sıfırla ve Çöz
+        </button>
+      </div>
+      <div style="font-size: 0.85rem; color: var(--text-secondary);">
+        Seçili Hedef: <strong id="selected-agent-label" style="color: var(--cyan-base);">Müşteri Destek Asistanı</strong>
+      </div>
+    </section>
+
+    <!-- Olay Bildirim Kutusu (Devre Kesici Tetiklendiğinde Açılır) -->
+    <section id="incident-alert-box" class="incident-alert-box">
+      <div class="incident-header">
+        <div class="incident-title">
+          <span>🚨</span>
+          <span>Devre Kesici Tetiklendi: Fatura Patlaması Engellendi</span>
+        </div>
+        <div id="incident-timer" class="incident-badge-timer">
+          0.38 sn içinde Tazmin Edildi
+        </div>
+      </div>
+
+      <p style="margin: 0; font-size: 0.9rem; color: var(--text-secondary);">
+        Ajan, belirlenen harcama güvenlik politikasını aştı. Fahiş API faturalarının önüne geçmek için yürütme anında donduruldu. Parametrik hasar talebi kriptografik log kanıtıyla anında onaylanıp geliştirici hesabına aktarıldı.
+      </p>
+
+      <div class="incident-grid">
+        <div class="incident-detail-item">
+          <span class="incident-detail-label">Etkilenen Ajan</span>
+          <span id="inc-agent" class="incident-detail-val">-</span>
+        </div>
+        <div class="incident-detail-item">
+          <span class="incident-detail-label">Olay Nedeni</span>
+          <span id="inc-reason" class="incident-detail-val" style="color: #fda4af;">-</span>
+        </div>
+        <div class="incident-detail-item">
+          <span class="incident-detail-label">Tazmin Edilen Tutar</span>
+          <span id="inc-reimbursed" class="incident-detail-val" style="color: var(--emerald-base);">-</span>
+        </div>
+        <div class="incident-detail-item">
+          <span class="incident-detail-label">Ödeme Kanalı</span>
+          <span id="inc-payout-rail" class="incident-detail-val">-</span>
+        </div>
+        <div class="incident-detail-item" style="grid-column: 1 / -1;">
+          <span class="incident-detail-label">Kriptografik Anomali Kanıtı (SHA-256)</span>
+          <span id="inc-proof" class="incident-detail-val" style="color: var(--cyan-base); font-size: 0.8rem;">-</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Korumalı Ajanlar Tablosu -->
+    <section>
+      <div class="section-heading">
+        <div class="section-title">
+          <span>🤖</span>
+          <span>Koruma Altındaki Ajan Örnekleri</span>
+        </div>
+        <span style="font-size: 0.8rem; color: var(--text-tertiary);">Hedeflemek için ajanın kartına tıklayın</span>
+      </div>
+      <div id="agents-grid-container" class="agents-grid">
+        <!-- app.js tarafından doldurulur -->
+      </div>
+    </section>
+
+    <!-- Parametrik Tazminat Geçmişi -->
+    <section>
+      <div class="section-heading">
+        <div class="section-title">
+          <span>⚡</span>
+          <span>Parametrik Tazminat Kayıtları (Sıfır Evrak Denetim Defteri)</span>
+        </div>
+        <span style="font-size: 0.8rem; color: var(--emerald-base); font-family: var(--font-mono);">Otomatik Çözümleme Süresi &lt; 60 sn</span>
+      </div>
+      <div class="ledger-card">
+        <table>
+          <thead>
+            <tr>
+              <th>Dosya No</th>
+              <th>Ajan Adı</th>
+              <th>Tetiklenme Nedeni</th>
+              <th>Ödenen Tutar</th>
+              <th>Çözümleme Hızı</th>
+              <th>Anomali Kanıt Özeti</th>
+            </tr>
+          </thead>
+          <tbody id="claims-ledger-tbody">
+            <!-- app.js tarafından doldurulur -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Herkese Açık B2B Güven Rozeti -->
+    <section class="badge-builder-card">
+      <div class="badge-info">
+        <h3>Canlı B2B Güven Rozeti</h3>
+        <p>Yapay zekanızın finansal garanti altında olduğunu kurumsal alıcılara göstermek için bu dinamik rozeti açılış sayfanıza veya API dokümanlarınıza gömün.</p>
+        <div style="margin-top: 0.75rem;">
+          <button id="btn-copy-embed" class="btn btn-secondary" style="font-size: 0.8rem; padding: 0.4rem 0.8rem;">
+            📋 HTML Rozet Kodunu Kopyala
+          </button>
+        </div>
+      </div>
+
+      <div class="badge-preview-area">
+        <div id="badge-svg-container">
+          <!-- app.js tarafından dinamik çizilir -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
